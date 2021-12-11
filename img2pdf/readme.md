@@ -20,3 +20,4 @@
 1. 改成吃 CLI 參數的方式決定使用的函數
 例如要合併，就直接用 `python app.py --vCombine` 之類的
 2. 容器的啟動指令，直接 `python app.py` 就好，然後一樣可以吃 `docker run` 時提供的參數
+3. 容器要有預設 volume，就可省去 `docker cp` 取出結果
