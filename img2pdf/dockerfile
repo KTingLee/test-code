@@ -10,13 +10,16 @@ WORKDIR /usr/src/img2pdf
 RUN pip install --upgrade pip
 
 RUN apk update \
-    && apk add --virtual build-deps gcc python3-dev musl-dev \
+    && apk add --virtual build-deps nano gcc python3-dev musl-dev \
     && apk add jpeg-dev zlib-dev libjpeg \
     && pip install Pillow \
     && apk del build-deps    
 
 # install dependencies
 RUN pip install --upgrade pip
+
+# set the volume path in the container
+VOLUME ["/usr/src/img2pdf/imgs"]
 
 COPY . .
 
