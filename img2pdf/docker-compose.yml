@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  img2pdf:
+    # build: .
+    image: pilpython
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./imgs:/usr/src/img2pdf/imgs
+      - ./pdf:/usr/src/img2pdf/pdf
