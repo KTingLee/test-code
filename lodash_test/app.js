@@ -14,4 +14,16 @@ function get () {
   console.log(result3)
 }
 
+function getFromUndefined () {
+  const obj = {}
+  const targetField = 'username'
+
+  // NOTE: _.get() 的好處是，即使第一個參數是 undefined，也可以正常運作
+  // 以下同 obj?.test?.[targetField]
+  const result = _.get(obj.test, targetField)
+
+  console.log(result)
+}
+
 get()
+getFromUndefined()
