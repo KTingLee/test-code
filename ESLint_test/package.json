@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "standard-lint": "eslint --ignore-path .gitignore ."
+    "standard-lint": "eslint --ignore-path .gitignore .",
+    "standard-fix": "eslint --ignore-path .gitignore . --fix"
   },
   "author": "",
   "license": "ISC",
