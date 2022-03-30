@@ -1,0 +1,17 @@
+version: "3.8"
+
+# services 區塊表示該 compose 管理多少個容器
+# 每一個容器都是一個 service
+# 例如下方定義了一個名為 nodejs 的 service
+services:
+  mytest:
+    image: nginx:alpine
+    container_name: mytest-container
+    restart: always
+    stdin_open: true
+    tty: true
+    ports:
+      - 5566:80
+    logging:
+      options:
+        max-size: 100k
