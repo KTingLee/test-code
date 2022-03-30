@@ -11,7 +11,7 @@
 #### ESLint
 * ESLint 是一個「檢查程式碼是否符合規則」的工具。
 * 當執行 ESLint 時，會檢查程式碼是否完全通過檢查，如果有地方不符合，就會直接跳錯誤訊息出來。
-* 此外，除了檢查程式碼是否符合規範外，也有提供**錯誤修正**功能(只會處理無關邏輯的錯誤)。
+* 此外，除了檢查程式碼是否符合規範外，也有提供**錯誤修正**功能(即 `--fix`，只會處理無關邏輯的錯誤)。
 * ESLint 還有一個「**錯誤剖析**」功能，例如程式碼中有*變數並沒宣告卻被使用* 或是 *變數是 `const` 宣告卻又被賦值*，這樣的程式碼執行起來絕對會 crash，而 ESLint 會先幫你找到這種低等錯誤。
 
 #### VSCode 中的 ESLint 套件，與實際的 ESLint npm 套件差異
@@ -25,7 +25,16 @@
 * 自動排版就只是自動排版，與 Coding style 無關。
 * 例如*宣告很多沒用到的變數、變數沒有宣告卻有被使用*，可能**排版上沒問題**，但 ESLint 會抓出這個錯誤。
 
-## 導入 ESLint、自動排版
+#### Prettier
+* Prettier 是一個自動排版套件，同時也可以在 VSCode 外掛中找到。
+
+### ESLint 與 Prettier 差異
+* 剛接觸 ESLint 可能會有一個疑問，既然 `eslint --fix` 就能自動修正各種錯誤，那幹嘛還要用 Prettier 呢？
+* 上述這個問題其實很正確，有了 `eslint --fix` 就可以把 Prettier 丟了沒關係。
+* 但要讓 ESLint 協助修正程式碼，還要**下指令**才行，而 Prettier 幫助自動排版就可以省略輸入 ESLint 指令的動作。
+* 只要 Prettier 排版的方式與 ESLint 設定相同，之後就不用執行 ESLint 指令！自動排版都幫忙做完囉！
+
+## 導入 ESLint、自動排版(Prettier)
 ### ESLint 安裝與使用說明
 1. 先安裝 ESLint 套件(可以連 IDE 外掛一起裝)
     ```bash
@@ -93,3 +102,5 @@
 * 所以把他寫進 `package.json` 的 `script` 欄位就好啦。
 * 此外，上述提到的忽略腳本，預設是吃 `.eslintignore`，但也可用指定的，例如不想檢查的檔案就跟 `.gitignore`，這時就可以寫 `eslint --ignore-path .gitignore`。
 
+
+### Prettier 安裝與使用說明
