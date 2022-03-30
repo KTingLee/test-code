@@ -10,8 +10,8 @@ services:
     restart: always
     stdin_open: true
     tty: true
-    ports:
-      - 5566:80
-    logging:
-      options:
-        max-size: 100k
+    # ports:
+    #   - 5566:80
+    # logging:
+    #   options:
+    #     max-size: 100k

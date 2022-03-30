@@ -8,7 +8,7 @@
 # 1. 啟動服務(會自動下載 image)
 docker-compose -f docker-compose-test.yml up -d mytest
 
-# 2. 測試瀏覽器 localhost:5566 是否能連上服務
+# 2. 測試瀏覽器 localhost:5566 是否能連上服務(基本上是補不行，因為沒設定 port)
 
 # 3. 修改 docker-compose-test.yml，將註解拿掉並儲存
 
