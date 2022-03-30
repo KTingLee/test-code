@@ -1,0 +1,23 @@
+version: "3.8"
+
+# 寫在外面的模板要加上 x- 前綴
+x-default-logging: &default-logging
+  options:
+    max-size: 5k
+
+services:
+  default-service-tamplate: &default-service-tamplate
+    image: nginx:alpine
+    container_name: default-container
+    restart: always
+    ports:
+      - 8080:80
+  # mytest service 匯入 default-service-tamplate 的所有欄位，然後覆蓋匯入的 container_name 設定
+  # 且設定 logging 設定，設定來自於外部變數 default-logging
+  mytest:
+    <<: *default-service-tamplate
+    container_name: mytest-container
+    # 使用模板，如果沒有要修改值，可以直接寫 logging: *default-logging；如果要修改值，則利用 <<: *default-logging 的方式匯入欄位
+    logging: 
+      <<: *default-logging
+
