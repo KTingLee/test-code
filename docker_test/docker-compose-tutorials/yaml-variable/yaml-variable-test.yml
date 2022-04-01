@@ -18,6 +18,5 @@ services:
     <<: *default-service-tamplate
     container_name: mytest-container
     # 使用模板，如果沒有要修改值，可以直接寫 logging: *default-logging；如果要修改值，則利用 <<: *default-logging 的方式匯入欄位
-    logging: 
-      <<: *default-logging
+    logging: *default-logging
 
